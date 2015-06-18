@@ -1,18 +1,8 @@
 class tecplotDataReader(object):
     import numpy as np
-    datafile=""
-    fileLen=0
-    sections=[]
-    sectionName=[]
-    sectionBegin=[]
-    sectionEnd=[]
-    sectionNodes=[]
-    sectionData={}
-    sectionLooporder=[]
-    variables=[]
-    index=0
+
     def __init__(self,datafile):
-        self._clear()
+        self.clear()
         self.datafile=datafile
         # self.fileLen is using the throwaway returnvalue of the _getVariables method
         self.fileLen= self._getVariables() 
@@ -34,17 +24,17 @@ class tecplotDataReader(object):
 #    def __str__(self):
 #        pass
 
-    def _clear(self):
+    def clear(self):
         self.datafile=""
         self.fileLen=0
         self.sections=[]
-        self.SectionName=[]
+        self.sectionName=[]
         self.sectionBegin=[]
         self.sectionEnd=[]
         self.sectionNodes=[]
         self.sectionData={}
-        self.variables=[]
         self.sectionLooporder=[]
+        self.variables=[]
         self.index=0
         
     def _getVariables(self):
@@ -103,3 +93,4 @@ class tecplotDataReader(object):
         
     def reorderedData(self,index):
         return self.sectionData[self.sectionLooporder[index]]
+
