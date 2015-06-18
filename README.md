@@ -34,9 +34,8 @@ You can Adress it by the original order of the file:
 parser.sectionData[originalNumber]
 
 or by the reordered number that you created with the "moveSectionToEnd()" method:
-parser.sectionData(orderedNumber)
+parser.reorderedData(orderedNumber)
 
-See the difference in the brackets!
 
 
 
