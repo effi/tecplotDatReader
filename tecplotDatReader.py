@@ -100,3 +100,6 @@ class tecplotDataReader(object):
         for section in self:
             print str(section) + self.sectionName[section] 
         self.index=tempindex
+        
+    def reorderedData(self,index):
+        return self.sectionData[self.sectionLooporder[index]]
